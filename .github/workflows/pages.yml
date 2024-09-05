@@ -28,14 +28,17 @@ jobs:
       - name: Build project
         run: pnpm build
 
+      - name: Export project to static files
+        run: pnpm export
+
       - name: List build output
-        run: ls -alh .next 
+        run: ls -alh out # Ensure the 'out' directory exists and contains static files
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
           name: next-build
-          path: .next
+          path: out # Use the 'out' directory for deployment
 
   deploy:
     needs: build
@@ -46,12 +49,14 @@ jobs:
     environment:
       name: github-pages
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: next-build
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages 
-          folder: .next 
+          branch: gh-pages
+          folder: out # Deploy the 'out' directory
