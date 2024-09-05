@@ -46,17 +46,13 @@ jobs:
     environment:
       name: github-pages
     steps:
-      # - name: Download build artifacts
-      #   uses: actions/download-artifact@v3
-      #   with:
-      #     name: next-build # Ensure this matches the name used in the upload step
-
-      # - name: List downloaded artifacts
-      #   run: ls -alh .next # Verify that the artifacts are downloaded and available
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.6.0
+        uses: actions/deploy-pages@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: .next # Deploy the .next directory
+
+
+          
