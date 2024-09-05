@@ -29,7 +29,7 @@ jobs:
         run: pnpm build
 
       - name: List build output
-        run: ls -alh .next # List contents of the .next directory
+        run: ls -alh .next # Verify the build output directory
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
@@ -55,11 +55,11 @@ jobs:
           name: next-build
 
       - name: List downloaded artifacts
-        run: ls -alh 
+        run: ls -alh # Verify the downloaded artifacts
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages 
-          folder: .next 
+          branch: gh-pages # The branch the action should deploy to.
+          folder: .next # The folder the action should deploy to.
