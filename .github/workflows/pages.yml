@@ -6,31 +6,36 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
+      - name: Set up Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
       - name: Install pnpm
         run: npm install -g pnpm # Install pnpm globally
 
       - name: Verify pnpm installation
-        run: pnpm --version # Verify pnpm is installed and available
+        run: pnpm --version # Ensure pnpm is installed and available
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install # Install dependencies using pnpm
 
       - name: Build
-        run: pnpm run build
+        run: pnpm run build # Build the project using pnpm
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          path: '.next'
+          path: '.next' # Assuming you're using Next.js, adjust if necessary
 
   deploy:
     needs: build
-    runs-on: macos-latest
+    runs-on: windows-latest
     permissions:
       pages: write
       id-token: write
