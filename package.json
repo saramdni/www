@@ -9,20 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@typescript-eslint/parser": "7.0.0",
     "next": "14.2.8",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "saramadani.io": "file:"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@typescript-eslint/eslint-plugin": "5.62.0",
-    "eslint": "^8",
+    "@types/node": "^20.16.5",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "7.2.0",
+    "eslint": "^8.57.0",
     "eslint-config-next": "14.2.8",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
   }
 }
