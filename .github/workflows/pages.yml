@@ -14,11 +14,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: pnpm
+          cache: npm
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
       - name: Build
-        run: pnpm run build
+        run: npm run build
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v1
         with:
