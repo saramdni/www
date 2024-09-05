@@ -20,6 +20,9 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
+      - name: Verify pnpm installation
+        run: pnpm --version # Check if pnpm is installed properly
+
       - name: Install dependencies
         run: pnpm install
 
@@ -29,7 +32,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          path: '.next' # Adjusted for Next.js build output
+          path: '.next'
 
   deploy:
     needs: build
