@@ -57,5 +57,9 @@ jobs:
       - name: List downloaded artifacts
         run: ls -alh 
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.6.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages 
+          folder: out 
