@@ -28,6 +28,9 @@ jobs:
       - name: Build project
         run: pnpm build
 
+      - name: List build output
+        run: ls -alh out 
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
