@@ -18,10 +18,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install pnpm
-        run: npm install -g pnpm
+        run: npm install -g pnpm # Install pnpm globally
 
       - name: Verify pnpm installation
-        run: pnpm --version # Check if pnpm is installed properly
+        run: pnpm --version # Verify pnpm is installed and available
 
       - name: Install dependencies
         run: pnpm install
