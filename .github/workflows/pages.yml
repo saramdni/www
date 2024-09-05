@@ -29,13 +29,13 @@ jobs:
         run: pnpm build
 
       - name: List build output
-        run: ls -alh out # List contents of the build output directory
+        run: ls -alh .next # List contents of the .next directory
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
           name: next-build
-          path: out
+          path: .next
 
   deploy:
     needs: build
@@ -62,4 +62,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages 
-          folder: out 
+          folder: .next 
