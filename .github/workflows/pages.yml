@@ -22,9 +22,6 @@ jobs:
       - name: Verify pnpm installation
         run: pnpm --version # Ensure pnpm is installed and available
 
-      - name: Install dependencies
-        run: pnpm install # Install dependencies using pnpm
-
       - name: Build
         run: pnpm run build # Build the project using pnpm
 
