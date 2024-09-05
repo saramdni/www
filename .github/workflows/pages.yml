@@ -29,7 +29,7 @@ jobs:
         run: pnpm build
 
       - name: Export project to static files
-        run: pnpm export
+        run: pnpm export # Ensure this command is available in your setup
 
       - name: List build output
         run: ls -alh out # Ensure the 'out' directory exists and contains static files
@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: next-build
-          path: out # Use the 'out' directory for deployment
+          path: out
 
   deploy:
     needs: build
@@ -59,4 +59,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: out # Deploy the 'out' directory
+          folder: out
