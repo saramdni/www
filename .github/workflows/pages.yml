@@ -29,7 +29,7 @@ jobs:
         run: pnpm build
 
       - name: List build output
-        run: ls -alh out 
+        run: ls -alh out # List contents of the build output directory
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3
@@ -53,6 +53,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: next-build
+
+      - name: List downloaded artifacts
+        run: ls -alh 
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
