@@ -6,15 +6,16 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: pnpm
 
       - name: Install pnpm
         run: npm install -g pnpm
@@ -28,30 +29,21 @@ jobs:
       - name: Build project
         run: pnpm build
 
-      - name: List build output
-        run: ls -alh .next # Ensure the .next directory contains build files
-
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
-          path: .next
+          path: out
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     permissions:
       pages: write
       id-token: write
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-
-      - name: Deploy 🚀
+      - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: .next # Deploy the .next directory
-
-
-          

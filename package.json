@@ -2,11 +2,12 @@
   "name": "saramadani.io",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export", 
+    "export": "next export",
     "lint": "next lint"
   },
   "dependencies": {
@@ -14,17 +15,18 @@
     "next": "14.2.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "saramadani.io": "file:"
+    "saramadani.io": "file:",
+    "u": "^0.1.0"
   },
   "devDependencies": {
-    "@types/node": "^20.16.5",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
+    "@types/node": "^20.17.9",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "7.2.0",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "eslint-config-next": "14.2.8",
-    "postcss": "^8.4.45",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4"
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.7.2"
   }
 }
