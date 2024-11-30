@@ -2,7 +2,7 @@ name: Deploy Next.js to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
 
 jobs:
   build:
@@ -14,11 +14,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: pnpm
+          node-version: 22
+          cache: npm
 
       - name: Install pnpm
         run: npm install -g pnpm
+
+      - name: Verify pnpm installation
+        run: pnpm --version
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
 
       - name: Verify pnpm installation
         run: pnpm --version
