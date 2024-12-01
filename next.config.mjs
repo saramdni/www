@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/www', 
-  trailingSlash: true,          
-};
+  basePath: '',
+  trailingSlash: true,
+}
 
-export default nextConfig;
+export default nextConfig
