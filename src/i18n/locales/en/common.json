@@ -1,0 +1,44 @@
+{
+  "brand": "SaraMadani",
+  "navbar": {
+    "about": "About Me",
+    "experience": "Experience",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact",
+    "cv": "Download CV",
+    "lang": "فارسی"
+  },
+  "hero": {
+    "hi": "Hi I am",
+    "name": "Sara Madani",
+    "role": "Midlevel Frontend Developer & UI/UX Designer",
+    "desc": "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus pharetra."
+  },
+  "about": {
+    "title": "About Me",
+    "desc": "Lorem ipsum dolor sit amet consectetur. Tristique amet sed massa nibh lectus netus in. Aliquet donec morbi convallis pretium. Turpis tempus pharetra."
+  },
+  "experience": {
+    "title": "Experience",
+    "position": "Position"
+  },
+  "services": {
+    "title": "Services",
+    "desc": "Here are the services I provide. Lorem ipsum dolor sit amet consectetur."
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of my work across platforms.",
+    "mobile": "Mobile app",
+    "website": "Website & Landing page",
+    "dashboard": "Dashboard",
+    "view": "View Project"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "desc": "Feel free to reach out. Lorem ipsum dolor sit amet consectetur.",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  }
+}
