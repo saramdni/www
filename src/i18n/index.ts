@@ -2,7 +2,7 @@
 import i18next from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import resourcesToBackend from 'i18next-resources-to-backend'
-import { getOptions } from './settings'
+import { getOptions, AppLang } from './settings'
 
 let inited = false
 
@@ -13,7 +13,7 @@ export function initI18n(lng: string) {
       .use(initReactI18next)
       .use(resourcesToBackend((lng: string, ns: string) => import(`./locales/${lng}/${ns}.json`)))
   }
-  i18next.init(getOptions(lng as any))
+  i18next.init(getOptions(lng as AppLang))
   inited = true
   return i18next
 }
