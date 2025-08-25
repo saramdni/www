@@ -5,8 +5,15 @@ import Experience from '@/components/Experience'
 import Services from '@/components/Services'
 import Projects from '@/components/Projects/Projects'
 import Contact from '@/components/Contact'
+import { languages } from '@/i18n/settings'
 
-export default function Home({ params: { lng } }: { params: { lng: string } }) {
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }))
+}
+
+export default async function Home({ params }: { params: Promise<{ lng: string }> }) {
+  const { lng } = await params
+  
   return (
     <>
       <Navbar lng={lng} />
