@@ -4,7 +4,13 @@ import { languages, fallbackLng } from './src/i18n/settings'
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl
-  const hasLng = languages.some((l) => pathname.startsWith(`/${l}`))
+
+  // Serve the portfolio at `/` without forcing a locale prefix.
+  if (pathname === '/') {
+    return NextResponse.next()
+  }
+
+  const hasLng = languages.some((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`))
   if (!hasLng) {
     const url = req.nextUrl.clone()
     url.pathname = `/${fallbackLng}${pathname}`
@@ -13,4 +19,4 @@ export function middleware(req: NextRequest) {
   return NextResponse.next()
 }
 
-export const config = { matcher: ['/((?!_next|.*..*).*)'] }
+export const config = { matcher: ['/((?!_next|.*\\..*).*)'] }

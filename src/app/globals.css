@@ -2,86 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
+:root,
+:root[data-color-mode='dark'] {
+  --accent: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.35);
+  --surface: #06080d;
+  --surface-elevated: #0b0e14;
+  --surface-panel: #04060a;
+  --fg: #fafafa;
+  --fg-soft: #e4e4e7;
+  --fg-muted: #a1a1aa;
+  --fg-subtle: #71717a;
+  --fg-faint: #52525b;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.14);
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-soft: rgba(255, 255, 255, 0.015);
+  --hover: rgba(255, 255, 255, 0.05);
+  --grid-dot: rgba(255, 255, 255, 0.07);
+  --overlay: rgba(0, 0, 0, 0.7);
+  --status-fg: #6ee7b7;
+  --status-bg: rgba(16, 185, 129, 0.1);
+  --status-border: rgba(16, 185, 129, 0.25);
+  --selection-fg: #ffffff;
+  color-scheme: dark;
+}
+
+:root[data-color-mode='light'] {
+  --accent-glow: color-mix(in srgb, var(--accent) 22%, transparent);
+  --surface: #f3f5f8;
+  --surface-elevated: #ffffff;
+  --surface-panel: #eef1f5;
+  --fg: #18181b;
+  --fg-soft: #27272a;
+  --fg-muted: #52525b;
+  --fg-subtle: #71717a;
+  --fg-faint: #a1a1aa;
+  --border: rgba(24, 24, 27, 0.08);
+  --border-strong: rgba(24, 24, 27, 0.12);
+  --border-hover: rgba(24, 24, 27, 0.2);
+  --glass: rgba(24, 24, 27, 0.03);
+  --glass-soft: rgba(24, 24, 27, 0.02);
+  --hover: rgba(24, 24, 27, 0.05);
+  --grid-dot: rgba(24, 24, 27, 0.1);
+  --overlay: rgba(15, 23, 42, 0.45);
+  --status-fg: #047857;
+  --status-bg: rgba(16, 185, 129, 0.12);
+  --status-border: rgba(16, 185, 129, 0.28);
+  --selection-fg: #ffffff;
+  color-scheme: light;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  .bg-obsidian {
+    background-color: var(--surface);
+  }
+
+  .bg-accent-glow {
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -20%, var(--accent-glow), transparent 55%),
+      radial-gradient(ellipse 40% 30% at 90% 10%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 50%),
+      radial-gradient(ellipse 35% 25% at 10% 40%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 45%);
+  }
+
+  .bg-tech-grid {
+    background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .bg-surface-nav {
+    background-color: color-mix(in srgb, var(--surface) 82%, transparent);
+  }
+
+  .bg-elevated-panel {
+    background-color: color-mix(in srgb, var(--surface-elevated) 96%, transparent);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
-  color: #000000;
-  background-color: #ffffff;
+  color: var(--fg);
+  background-color: var(--surface);
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 180ms ease, color 180ms ease;
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 72rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+::selection {
+  background: color-mix(in srgb, var(--accent) 40%, transparent);
+  color: var(--selection-fg);
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  border: 1px solid rgb(0 0 0 / 0.1);
-}
-.btn-primary {
-  background-color: #000000;
-  color: #ffffff;
-}
-.btn-primary:hover {
-  background-color: rgb(0 0 0 / 0.9);
+:focus-visible {
+  outline: none;
 }
 
-.section {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-@media (min-width: 768px) {
-  .section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-}
-.section-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-}
-@media (min-width: 768px) {
-  .section-title {
-    font-size: 1.875rem;
-  }
-}
-.section-sub {
-  color: #4b5563;
-}
-
-.card {
-  border-radius: 1rem;
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  border: 1px solid rgb(0 0 0 / 0.1);
-  overflow: hidden;
-  background-color: #ffffff;
-}
-.placeholder-box {
-  background-color: #e5e7eb;
-  border-radius: 0.75rem;
-  width: 100%;
-  height: 16rem;
-}
-
-/* RTL helpers */
-.rtl * {
-  font-feature-settings: 'ss01';
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--accent) 45%, transparent) transparent;
 }
