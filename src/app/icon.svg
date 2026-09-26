@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="7" fill="#0A0D14"/>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="6.5" stroke="#334155" stroke-width="1"/>
+  <text
+    x="14"
+    y="22.5"
+    text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'JetBrains Mono', monospace"
+    font-size="16.5"
+    font-weight="900"
+    letter-spacing="-0.8px"
+    fill="#FFFFFF"
+  >S<tspan fill="#818CF8">M</tspan></text>
+  <circle cx="26.5" cy="5.5" r="2.5" fill="#10B981"/>
+</svg>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Sara Madani — Frontend Developer & UI/UX Specialist Portfolio & Resume (Dark Mode)">
+  <meta name="author" content="Sara Madani">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Sara Madani — Frontend Developer & UI/UX Specialist">
+  <meta property="og:description" content="Frontend Developer and UI/UX Specialist with 5+ years of experience engineering scalable web applications and enterprise systems.">
+  <meta property="og:url" content="https://saramadani.io/">
+
+  <title>Sara Madani — Frontend Developer & UI/UX Specialist</title>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f6feb'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:          #161b22;
+      --bg-side:     #0d1117;
+      --bg-chip:     #21262d;
+      --border:      #30363d;
+      --border-soft: #272d36;
+      --text:        #e6edf3;
+      --text-mid:    #8b949e;
+      --muted:       #6e7681;
+      --blue:        #58a6ff;
+      --blue-dark:   #79c0ff;
+      --purple:      #bc8cff;
+      --green:       #3fb950;
+      --num:         #f0883e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', Consolas, 'Courier New', monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: var(--text);
+      background: #090d12;
+      padding: 28px 14px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: #1f6feb;
+      color: #ffffff;
+    }
+
+    a {
+      color: var(--blue-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 920px;
+      margin: 0 auto;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, .65);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+    }
+
+    .titlebar {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      background: var(--bg-side);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .dot.red { background: #ff5f56; }
+    .dot.yellow { background: #ffbd2e; }
+    .dot.green { background: #27c93f; }
+
+    .filename {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-mid);
+    }
+
+    .ts-badge {
+      font-size: 8.5px;
+      font-weight: 800;
+      color: #fff;
+      background: #3178c6;
+      border-radius: 3px;
+      padding: 2px 5px;
+      letter-spacing: .5px;
+    }
+
+    .breadcrumb {
+      margin-left: auto;
+      font-size: 10.5px;
+      color: var(--muted);
+    }
+
+    .sidebar {
+      grid-column: 1;
+      grid-row: 2;
+      background: var(--bg-side);
+      background-image:
+        linear-gradient(rgba(88, 166, 255, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(88, 166, 255, .045) 1px, transparent 1px);
+      background-size: 18px 18px;
+      border-right: 1px solid var(--border);
+      padding: 24px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
+      min-width: 0;
+    }
+
+    .prompt {
+      font-size: 10.5px;
+      color: var(--muted);
+    }
+
+    .prompt .user {
+      color: var(--blue-dark);
+      font-weight: 600;
+    }
+
+    .prompt .dollar {
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .name {
+      font-size: 33px;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -1px;
+      color: var(--text);
+      margin: 7px 0 9px;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: .34em;
+      height: .72em;
+      background: var(--blue);
+      margin-left: 5px;
+      animation: blink 1.1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cursor {
+        animation: none;
+      }
+    }
+
+    .role {
+      font-size: 11.5px;
+      color: var(--blue-dark);
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .side-title {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text);
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .side-title .slash {
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .contact {
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    .contact .brace {
+      color: var(--muted);
+    }
+
+    .crow {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      padding-left: 8px;
+    }
+
+    .ckey {
+      color: var(--blue-dark);
+      font-weight: 600;
+    }
+
+    .ckey::after {
+      content: ":";
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .cval {
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    a.cval:hover {
+      text-decoration: underline;
+    }
+
+    .edu-degree {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .edu-school {
+      font-size: 11px;
+      color: var(--text-mid);
+      margin-top: 2px;
+      line-height: 1.5;
+    }
+
+    .edu-date {
+      font-size: 10.5px;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .achv {
+      list-style: none;
+    }
+
+    .achv li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 11px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .achv li::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .achv li strong {
+      color: var(--text);
+    }
+
+    .achv .yr {
+      color: var(--num);
+      font-weight: 700;
+    }
+
+    .main {
+      grid-column: 2;
+      grid-row: 2;
+      padding: 26px 30px 24px 26px;
+      min-width: 0;
+    }
+
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .3px;
+      color: var(--text);
+      padding-bottom: 7px;
+      margin-bottom: 12px;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .section-title .slash {
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .section-title .idx {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 10px;
+    }
+
+    .summary {
+      color: var(--text-mid);
+      font-size: 11.8px;
+    }
+
+    .summary strong {
+      color: var(--blue-dark);
+    }
+
+    .skills {
+      display: grid;
+      row-gap: 11px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 128px 1fr;
+      column-gap: 14px;
+      align-items: start;
+    }
+
+    .skill-key {
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 11.5px;
+      padding-top: 2px;
+    }
+
+    .skill-key::after {
+      content: ":";
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      font-size: 10.5px;
+      line-height: 1.5;
+      padding: 2px 8px;
+      background: var(--bg-chip);
+      border: 1px solid var(--border-soft);
+      border-radius: 4px;
+      color: var(--text);
+      transition: border-color .15s ease, color .15s ease;
+    }
+
+    .tag:hover {
+      border-color: var(--blue);
+      color: var(--blue-dark);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 22px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 9px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--blue) 0%, var(--border) 100%);
+    }
+
+    .commit {
+      position: relative;
+      padding-bottom: 19px;
+    }
+
+    .commit:last-child {
+      padding-bottom: 0;
+    }
+
+    .commit::before {
+      content: "";
+      position: absolute;
+      left: -21px;
+      top: 5px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--blue);
+    }
+
+    .commit.current::before {
+      background: var(--blue);
+      box-shadow: 0 0 0 4px rgba(88, 166, 255, .25);
+    }
+
+    .commit-row1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .job-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .exp-date {
+      font-size: 10px;
+      color: var(--text-mid);
+      white-space: nowrap;
+      background: var(--bg-chip);
+      border: 1px solid var(--border-soft);
+      border-radius: 999px;
+      padding: 1px 9px;
+    }
+
+    .commit-row2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin: 1px 0 5px;
+    }
+
+    .company {
+      color: var(--purple);
+      font-weight: 600;
+      font-size: 11.5px;
+    }
+
+    .company::before {
+      content: "@";
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .branch {
+      font-size: 10px;
+      color: var(--blue-dark);
+      white-space: nowrap;
+      background: rgba(88, 166, 255, .12);
+      border: 1px solid rgba(88, 166, 255, .3);
+      border-radius: 999px;
+      padding: 1px 8px;
+    }
+
+    .hash {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .commit ul {
+      list-style: none;
+    }
+
+    .commit li {
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 3px;
+      color: var(--text-mid);
+      font-size: 11.5px;
+      line-height: 1.6;
+    }
+
+    .commit li::before {
+      content: "-";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .commit li strong {
+      color: var(--text);
+    }
+
+    .num {
+      color: var(--num);
+      font-weight: 700;
+    }
+
+    .statusbar {
+      grid-column: 1 / -1;
+      grid-row: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 16px;
+      background: #0d1117;
+      border-top: 1px solid var(--border);
+      color: #8b949e;
+      font-size: 10px;
+      letter-spacing: .3px;
+    }
+
+    .sb-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .sb-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .sb-branch { color: #79c0ff; }
+    .sb-ok { color: #56d364; }
+    .sb-lang { color: #e6edf3; }
+
+    @media (max-width: 780px) {
+      body {
+        padding: 12px 8px;
+      }
+      .page {
+        grid-template-columns: 1fr;
+      }
+      .titlebar {
+        grid-row: 1;
+      }
+      .sidebar {
+        grid-column: 1;
+        grid-row: 2;
+        border-right: none;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .main {
+        grid-column: 1;
+        grid-row: 3;
+      }
+      .statusbar {
+        grid-row: 4;
+      }
+      .skill-row {
+        grid-template-columns: 1fr;
+        row-gap: 4px;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 8mm;
+    }
+
+    @media print {
+      body {
+        background: #090d12;
+        padding: 0;
+        font-size: 11.5px;
+      }
+      .page {
+        max-width: 100%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      .cursor {
+        animation: none;
+      }
+      .commit, .side-block, .skill-row, .side-head {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      .section-title, .side-title {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="titlebar">
+    <div class="dots">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    </div>
+    <div class="filename"><span class="ts-badge">TS</span> sara-madani.tsx</div>
+    <div class="breadcrumb">~/dev/resume</div>
+  </header>
+
+  <aside class="sidebar">
+
+    <div class="side-head">
+      <div class="prompt"><span class="user">sara@frontend</span>:~<span class="dollar">$</span> whoami</div>
+      <h1 class="name">Sara<br>Madani<span class="cursor"></span></h1>
+      <div class="role">// Frontend Developer<br>// &amp; UI/UX Specialist</div>
+    </div>
+
+    <div class="side-block">
+      <h3 class="side-title"><span class="slash">//</span>contact.json</h3>
+      <div class="contact">
+        <div class="brace">{</div>
+        <div class="crow"><span class="ckey">birth_date</span><span class="cval">"2000/Jul/22"</span></div>
+        <div class="crow"><span class="ckey">location</span><span class="cval">"Tehran, Iran"</span></div>
+        <div class="crow"><span class="ckey">email</span><a class="cval" href="mailto:madanisara30@gmail.com">"madanisara30@gmail.com"</a></div>
+        <div class="crow"><span class="ckey">phone</span><a class="cval" href="tel:09034445562">"+98 903 444 5562"</a></div>
+        <div class="crow"><span class="ckey">website</span><a class="cval" href="https://saramadani.io/" target="_blank" rel="noopener noreferrer">"saramadani.io"</a></div>
+        <div class="crow"><span class="ckey">github</span><a class="cval" href="https://github.com/saramdni" target="_blank" rel="noopener noreferrer">"github.com/saramdni"</a></div>
+        <div class="crow"><span class="ckey">linkedin</span><a class="cval" href="https://www.linkedin.com/in/sara-madani-front-end-developer/" target="_blank" rel="noopener noreferrer">"in/sara-madani"</a></div>
+        <div class="brace">}</div>
+      </div>
+    </div>
+
+    <div class="side-block">
+      <h3 class="side-title"><span class="slash">//</span>education</h3>
+      <div class="edu-degree">B.Sc. in Software Engineering</div>
+      <div class="edu-school">Shariaty Technical &amp; Vocational University</div>
+      <div class="edu-date">2018 → 2023</div>
+    </div>
+
+    <div class="side-block">
+      <h3 class="side-title"><span class="slash">//</span>achievements.log</h3>
+      <ul class="achv">
+        <li><span class="yr">[2019]</span> <strong>Winner</strong> — Algorithm Contest at Quera.ir</li>
+        <li><span class="yr">[2017]</span> <strong>Winner</strong> — Game Development Contest, built with C# Windows Forms</li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <main class="main">
+
+    <section class="section">
+      <h2 class="section-title"><span class="slash">//</span><span class="idx">01</span>professional_summary</h2>
+      <p class="summary">
+        Frontend Developer and UI/UX Specialist with <span class="num">5+</span> years of experience engineering scalable web applications and enterprise systems. Expert in <strong>React.js</strong>, <strong>Next.js</strong>, and <strong>TypeScript</strong>, with a strong focus on architecting custom UI component systems, data-driven dashboards, and integrating enterprise AI capabilities. Proven track record leading projects across the entire product lifecycle — from UX research and prototyping to frontend architecture, API integration, and production maintenance.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title"><span class="slash">//</span><span class="idx">02</span>technical_skills</h2>
+      <div class="skills">
+
+        <div class="skill-row">
+          <div class="skill-key">core_frameworks</div>
+          <div class="tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">JavaScript (ES6+)</span>
+            <span class="tag">React.js</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Vue.js</span>
+            <span class="tag">AngularJS</span>
+            <span class="tag">React Native</span>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-key">state_and_data</div>
+          <div class="tags">
+            <span class="tag">React Query (TanStack Query)</span>
+            <span class="tag">Redux Toolkit</span>
+            <span class="tag">Context API</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">WebSockets</span>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-key">ui_ux_styling</div>
+          <div class="tags">
+            <span class="tag">UI/UX Design</span>
+            <span class="tag">Custom Design Systems</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">SASS/SCSS</span>
+            <span class="tag">LESS</span>
+            <span class="tag">Responsive Design</span>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-key">architecture</div>
+          <div class="tags">
+            <span class="tag">Frontend Architecture</span>
+            <span class="tag">Component-Driven Dev</span>
+            <span class="tag">Performance Tuning</span>
+            <span class="tag">Cross-Browser Compatibility</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title"><span class="slash">//</span><span class="idx">03</span>work_experience</h2>
+      <div class="timeline">
+
+        <article class="commit current">
+          <div class="commit-row1">
+            <span class="job-title">Frontend Developer &amp; UI/UX Specialist</span>
+            <span class="exp-date">Nov 2024 → Present</span>
+          </div>
+          <div class="commit-row2">
+            <span class="company">Fekoor Sanat Tehran</span>
+            <span class="meta">
+              <span class="branch">HEAD → main</span>
+              <span class="hash">a91fe24</span>
+            </span>
+          </div>
+          <ul>
+            <li><strong>Enterprise Dashboard &amp; IT Platform ("Sheng"):</strong> Architected and developed an enterprise-wide platform from scratch using Next.js (App Router), React.js, and TypeScript, consolidating business workflows and organizational automation.</li>
+            <li><strong>Enterprise AI Integration:</strong> Integrated enterprise-grade AI models and intelligent chatbot workflows (such as Parsa) directly into dashboard subsystems for automated business operations.</li>
+            <li><strong>Custom Component Infrastructure:</strong> Engineered a scalable, zero-dependency custom UI design system and reusable component library from the ground up, significantly reducing boilerplate and boosting UI consistency.</li>
+            <li><strong>End-to-End UI/UX:</strong> Led design and user testing for Fekoor Sanat's core web interfaces, maintaining continuous collaboration with backend/DevOps for testing, staging, and production rollouts.</li>
+          </ul>
+        </article>
+
+        <article class="commit">
+          <div class="commit-row1">
+            <span class="job-title">Frontend Developer</span>
+            <span class="exp-date">Jul 2021 → Oct 2024</span>
+          </div>
+          <div class="commit-row2">
+            <span class="company">Fanap Infrastructure</span>
+            <span class="meta"><span class="hash">7c3d9b1</span></span>
+          </div>
+          <ul>
+            <li>Collaborated within a cross-functional team of <span class="num">7</span> to engineer large-scale enterprise web applications using React.js, Next.js, and Vue.js.</li>
+            <li>Implemented over <span class="num">70%</span> of core frontend functionality; restructured Next.js APIs to eliminate redundant middleware layers, reducing build bundle size by <span class="num">30%</span>.</li>
+            <li>Developed high-performance recursive rendering components capable of efficiently displaying over <span class="num">50,000</span> hierarchical tree items.</li>
+            <li>Optimized data fetching with React Query and Redux, achieving an estimated <span class="num">40%</span> performance gain across data-intensive views.</li>
+            <li>Built and delivered performant cross-platform mobile applications using React Native for iOS and Android.</li>
+          </ul>
+        </article>
+
+        <article class="commit">
+          <div class="commit-row1">
+            <span class="job-title">Frontend Developer</span>
+            <span class="exp-date">Jan 2021 → Nov 2021</span>
+          </div>
+          <div class="commit-row2">
+            <span class="company">Fanap Soft</span>
+            <span class="meta"><span class="hash">e58a102</span></span>
+          </div>
+          <ul>
+            <li>Collaborated with an Agile team of <span class="num">15+</span> engineers developing an ERP mobile solution utilizing AngularJS and OnsenUI.</li>
+            <li>Developed complex components from scratch, including custom Persian/Gregorian calendars, barcode scanners, and search modules.</li>
+            <li>Refactored <span class="num">40+</span> legacy components, reducing script complexity by <span class="num">30%</span> and doubling rendering efficiency.</li>
+          </ul>
+        </article>
+
+        <article class="commit">
+          <div class="commit-row1">
+            <span class="job-title">Frontend Developer</span>
+            <span class="exp-date">Jul 2019 → Jul 2021</span>
+          </div>
+          <div class="commit-row2">
+            <span class="company">Lisiantos</span>
+            <span class="meta"><span class="hash">2b4c8f7</span></span>
+          </div>
+          <ul>
+            <li>Designed and developed over <span class="num">200</span> responsive HTML5/CSS3/JavaScript website templates optimized for all modern viewports.</li>
+            <li>Created intuitive UI/UX design patterns, leading to a <span class="num">40%</span> increase in customer satisfaction.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="statusbar">
+    <div class="sb-group">
+      <span class="sb-item sb-branch">git:(main*)</span>
+      <span class="sb-item sb-ok">✓ prettier</span>
+      <span class="sb-item">✕ 0 &nbsp;⚠ 0</span>
+    </div>
+    <div class="sb-group">
+      <span class="sb-item">Ln 42, Col 7</span>
+      <span class="sb-item">Spaces: 2</span>
+      <span class="sb-item">UTF-8</span>
+      <span class="sb-item sb-lang">TypeScript TSX</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
