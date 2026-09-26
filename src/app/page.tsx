@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation'
+import PortfolioShell from '@/components/PortfolioShell'
 
 export default function RootPage() {
-  redirect('/en')
+  return <PortfolioShell />
 }
