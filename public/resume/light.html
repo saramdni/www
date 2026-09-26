@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,32 +11,35 @@
 
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Sara Madani — Frontend Developer & UI/UX Specialist">
-  <meta property="og:description" content="Frontend Developer and UI/UX Specialist with 5+ years of experience engineering scalable web applications and enterprise systems.">
+  <meta property="og:description"
+    content="Frontend Developer and UI/UX Specialist with 5+ years of experience engineering scalable web applications and enterprise systems.">
   <meta property="og:url" content="https://saramadani.io/">
 
   <title>Sara Madani — Frontend Developer & UI/UX Specialist</title>
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230969da'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230969da'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' font-weight='bold' fill='white' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
-      --bg:          #ffffff;
-      --bg-side:     #f6f8fa;
-      --bg-chip:     #eff2f6;
-      --border:      #d5dbe1;
+      --bg: #ffffff;
+      --bg-side: #f6f8fa;
+      --bg-chip: #eff2f6;
+      --border: #d5dbe1;
       --border-soft: #e7ebef;
-      --text:        #1f2328;
-      --text-mid:    #4a5361;
-      --muted:       #6e7781;
-      --blue:        #0969da;
-      --blue-dark:   #0550ae;
-      --purple:      #8250df;
-      --green:       #1a7f37;
-      --num:         #bc4c00;
+      --text: #1f2328;
+      --text-mid: #4a5361;
+      --muted: #6e7781;
+      --blue: #0969da;
+      --blue-dark: #0550ae;
+      --purple: #8250df;
+      --green: #1a7f37;
+      --num: #bc4c00;
     }
 
     * {
@@ -106,9 +110,17 @@
       border-radius: 50%;
     }
 
-    .dot.red { background: #ff5f56; }
-    .dot.yellow { background: #ffbd2e; }
-    .dot.green { background: #27c93f; }
+    .dot.red {
+      background: #ff5f56;
+    }
+
+    .dot.yellow {
+      background: #ffbd2e;
+    }
+
+    .dot.green {
+      background: #27c93f;
+    }
 
     .filename {
       position: absolute;
@@ -189,7 +201,9 @@
     }
 
     @keyframes blink {
-      50% { opacity: 0; }
+      50% {
+        opacity: 0;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -561,20 +575,31 @@
       white-space: nowrap;
     }
 
-    .sb-branch { color: #79b8ff; }
-    .sb-ok { color: #7ee787; }
-    .sb-lang { color: #dce6f0; }
+    .sb-branch {
+      color: #79b8ff;
+    }
+
+    .sb-ok {
+      color: #7ee787;
+    }
+
+    .sb-lang {
+      color: #dce6f0;
+    }
 
     @media (max-width: 780px) {
       body {
         padding: 12px 8px;
       }
+
       .page {
         grid-template-columns: 1fr;
       }
+
       .titlebar {
         grid-row: 1;
       }
+
       .sidebar {
         grid-column: 1;
         grid-row: 2;
@@ -582,13 +607,16 @@
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
       }
+
       .main {
         grid-column: 1;
         grid-row: 3;
       }
+
       .statusbar {
         grid-row: 4;
       }
+
       .skill-row {
         grid-template-columns: 1fr;
         row-gap: 4px;
@@ -606,237 +634,279 @@
         padding: 0;
         font-size: 11.5px;
       }
+
       .page {
         max-width: 100%;
         border: none;
         border-radius: 0;
         box-shadow: none;
       }
+
       a {
         text-decoration: none;
       }
+
       .cursor {
         animation: none;
       }
-      .commit, .side-block, .skill-row, .side-head {
+
+      .commit,
+      .side-block,
+      .skill-row,
+      .side-head {
         page-break-inside: avoid;
         break-inside: avoid;
       }
-      .section-title, .side-title {
+
+      .section-title,
+      .side-title {
         page-break-after: avoid;
         break-after: avoid;
       }
     }
   </style>
 </head>
+
 <body>
 
-<div class="page">
+  <div class="page">
 
-  <header class="titlebar">
-    <div class="dots">
-      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-    </div>
-    <div class="filename"><span class="ts-badge">TS</span> sara-madani.tsx</div>
-    <div class="breadcrumb">~/dev/resume</div>
-  </header>
-
-  <aside class="sidebar">
-
-    <div class="side-head">
-      <div class="prompt"><span class="user">sara@frontend</span>:~<span class="dollar">$</span> whoami</div>
-      <h1 class="name">Sara<br>Madani<span class="cursor"></span></h1>
-      <div class="role">// Frontend Developer<br>// &amp; UI/UX Specialist</div>
-    </div>
-
-    <div class="side-block">
-      <h3 class="side-title"><span class="slash">//</span>contact.json</h3>
-      <div class="contact">
-        <div class="brace">{</div>
-        <div class="crow"><span class="ckey">birth_date</span><span class="cval">"2000/Jul/22"</span></div>
-        <div class="crow"><span class="ckey">location</span><span class="cval">"Tehran, Iran"</span></div>
-        <div class="crow"><span class="ckey">email</span><a class="cval" href="mailto:madanisara30@gmail.com">"madanisara30@gmail.com"</a></div>
-        <div class="crow"><span class="ckey">phone</span><a class="cval" href="tel:09034445562">"+98 903 444 5562"</a></div>
-        <div class="crow"><span class="ckey">website</span><a class="cval" href="https://saramadani.io/" target="_blank" rel="noopener noreferrer">"saramadani.io"</a></div>
-        <div class="crow"><span class="ckey">github</span><a class="cval" href="https://github.com/saramdni" target="_blank" rel="noopener noreferrer">"github.com/saramdni"</a></div>
-        <div class="crow"><span class="ckey">linkedin</span><a class="cval" href="https://www.linkedin.com/in/sara-madani-front-end-developer/" target="_blank" rel="noopener noreferrer">"in/sara-madani"</a></div>
-        <div class="brace">}</div>
+    <header class="titlebar">
+      <div class="dots">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
       </div>
-    </div>
+      <div class="filename"><span class="ts-badge">TS</span> sara-madani.tsx</div>
+      <div class="breadcrumb">~/dev/resume</div>
+    </header>
 
-    <div class="side-block">
-      <h3 class="side-title"><span class="slash">//</span>education</h3>
-      <div class="edu-degree">B.Sc. in Software Engineering</div>
-      <div class="edu-school">Shariaty Technical &amp; Vocational University</div>
-      <div class="edu-date">2018 → 2023</div>
-    </div>
+    <aside class="sidebar">
 
-    <div class="side-block">
-      <h3 class="side-title"><span class="slash">//</span>achievements.log</h3>
-      <ul class="achv">
-        <li><span class="yr">[2019]</span> <strong>Winner</strong> — Algorithm Contest at Quera.ir</li>
-        <li><span class="yr">[2017]</span> <strong>Winner</strong> — Game Development Contest, built with C# Windows Forms</li>
-      </ul>
-    </div>
-
-  </aside>
-
-  <main class="main">
-
-    <section class="section">
-      <h2 class="section-title"><span class="slash">//</span><span class="idx">01</span>professional_summary</h2>
-      <p class="summary">
-        Frontend Developer and UI/UX Specialist with <span class="num">5+</span> years of experience engineering scalable web applications and enterprise systems. Expert in <strong>React.js</strong>, <strong>Next.js</strong>, and <strong>TypeScript</strong>, with a strong focus on architecting custom UI component systems, data-driven dashboards, and integrating enterprise AI capabilities. Proven track record leading projects across the entire product lifecycle — from UX research and prototyping to frontend architecture, API integration, and production maintenance.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title"><span class="slash">//</span><span class="idx">02</span>technical_skills</h2>
-      <div class="skills">
-
-        <div class="skill-row">
-          <div class="skill-key">core_frameworks</div>
-          <div class="tags">
-            <span class="tag">TypeScript</span>
-            <span class="tag">JavaScript (ES6+)</span>
-            <span class="tag">React.js</span>
-            <span class="tag">Next.js</span>
-            <span class="tag">Vue.js</span>
-            <span class="tag">AngularJS</span>
-            <span class="tag">React Native</span>
-          </div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-key">state_and_data</div>
-          <div class="tags">
-            <span class="tag">React Query (TanStack Query)</span>
-            <span class="tag">Redux Toolkit</span>
-            <span class="tag">Context API</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">WebSockets</span>
-          </div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-key">ui_ux_styling</div>
-          <div class="tags">
-            <span class="tag">UI/UX Design</span>
-            <span class="tag">Custom Design Systems</span>
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3</span>
-            <span class="tag">SASS/SCSS</span>
-            <span class="tag">LESS</span>
-            <span class="tag">Responsive Design</span>
-          </div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-key">architecture</div>
-          <div class="tags">
-            <span class="tag">Frontend Architecture</span>
-            <span class="tag">Component-Driven Dev</span>
-            <span class="tag">Performance Tuning</span>
-            <span class="tag">Cross-Browser Compatibility</span>
-          </div>
-        </div>
-
+      <div class="side-head">
+        <div class="prompt"><span class="user">sara@frontend</span>:~<span class="dollar">$</span> whoami</div>
+        <h1 class="name">Sara<br>Madani<span class="cursor"></span></h1>
+        <div class="role">// Frontend Developer<br>// &amp; UI/UX Specialist</div>
       </div>
-    </section>
 
-    <section class="section">
-      <h2 class="section-title"><span class="slash">//</span><span class="idx">03</span>work_experience</h2>
-      <div class="timeline">
-
-        <article class="commit current">
-          <div class="commit-row1">
-            <span class="job-title">Frontend Developer &amp; UI/UX Specialist</span>
-            <span class="exp-date">Nov 2024 → Present</span>
+      <div class="side-block">
+        <h3 class="side-title"><span class="slash">//</span>contact.json</h3>
+        <div class="contact">
+          <div class="brace">{</div>
+          <div class="crow"><span class="ckey">birth_date</span><span class="cval">"2000/Jul/22"</span></div>
+          <div class="crow"><span class="ckey">location</span><span class="cval">"Tehran, Iran"</span></div>
+          <div class="crow"><span class="ckey">email</span><a class="cval"
+              href="mailto:madanisara30@gmail.com">"madanisara30@gmail.com"</a></div>
+          <div class="crow"><span class="ckey">phone</span><a class="cval" href="tel:09034445562">"+98 903 444 5562"</a>
           </div>
-          <div class="commit-row2">
-            <span class="company">Fekoor Sanat Tehran</span>
-            <span class="meta">
-              <span class="branch">HEAD → main</span>
-              <span class="hash">a91fe24</span>
-            </span>
-          </div>
-          <ul>
-            <li><strong>Enterprise Dashboard &amp; IT Platform ("Sheng"):</strong> Architected and developed an enterprise-wide platform from scratch using Next.js (App Router), React.js, and TypeScript, consolidating business workflows and organizational automation.</li>
-            <li><strong>Enterprise AI Integration:</strong> Integrated enterprise-grade AI models and intelligent chatbot workflows (such as Parsa) directly into dashboard subsystems for automated business operations.</li>
-            <li><strong>Custom Component Infrastructure:</strong> Engineered a scalable, zero-dependency custom UI design system and reusable component library from the ground up, significantly reducing boilerplate and boosting UI consistency.</li>
-            <li><strong>End-to-End UI/UX:</strong> Led design and user testing for Fekoor Sanat's core web interfaces, maintaining continuous collaboration with backend/DevOps for testing, staging, and production rollouts.</li>
-          </ul>
-        </article>
-
-        <article class="commit">
-          <div class="commit-row1">
-            <span class="job-title">Frontend Developer</span>
-            <span class="exp-date">Jul 2021 → Oct 2024</span>
-          </div>
-          <div class="commit-row2">
-            <span class="company">Fanap Infrastructure</span>
-            <span class="meta"><span class="hash">7c3d9b1</span></span>
-          </div>
-          <ul>
-            <li>Collaborated within a cross-functional team of <span class="num">7</span> to engineer large-scale enterprise web applications using React.js, Next.js, and Vue.js.</li>
-            <li>Implemented over <span class="num">70%</span> of core frontend functionality; restructured Next.js APIs to eliminate redundant middleware layers, reducing build bundle size by <span class="num">30%</span>.</li>
-            <li>Developed high-performance recursive rendering components capable of efficiently displaying over <span class="num">50,000</span> hierarchical tree items.</li>
-            <li>Optimized data fetching with React Query and Redux, achieving an estimated <span class="num">40%</span> performance gain across data-intensive views.</li>
-            <li>Built and delivered performant cross-platform mobile applications using React Native for iOS and Android.</li>
-          </ul>
-        </article>
-
-        <article class="commit">
-          <div class="commit-row1">
-            <span class="job-title">Frontend Developer</span>
-            <span class="exp-date">Jan 2021 → Nov 2021</span>
-          </div>
-          <div class="commit-row2">
-            <span class="company">Fanap Soft</span>
-            <span class="meta"><span class="hash">e58a102</span></span>
-          </div>
-          <ul>
-            <li>Collaborated with an Agile team of <span class="num">15+</span> engineers developing an ERP mobile solution utilizing AngularJS and OnsenUI.</li>
-            <li>Developed complex components from scratch, including custom Persian/Gregorian calendars, barcode scanners, and search modules.</li>
-            <li>Refactored <span class="num">40+</span> legacy components, reducing script complexity by <span class="num">30%</span> and doubling rendering efficiency.</li>
-          </ul>
-        </article>
-
-        <article class="commit">
-          <div class="commit-row1">
-            <span class="job-title">Frontend Developer</span>
-            <span class="exp-date">Jul 2019 → Jul 2021</span>
-          </div>
-          <div class="commit-row2">
-            <span class="company">Lisiantos</span>
-            <span class="meta"><span class="hash">2b4c8f7</span></span>
-          </div>
-          <ul>
-            <li>Designed and developed over <span class="num">200</span> responsive HTML5/CSS3/JavaScript website templates optimized for all modern viewports.</li>
-            <li>Created intuitive UI/UX design patterns, leading to a <span class="num">40%</span> increase in customer satisfaction.</li>
-          </ul>
-        </article>
-
+          <div class="crow"><span class="ckey">website</span><a class="cval" href="https://saramadani.io/"
+              target="_blank" rel="noopener noreferrer">"saramadani.io"</a></div>
+          <div class="crow"><span class="ckey">github</span><a class="cval" href="https://github.com/saramdni"
+              target="_blank" rel="noopener noreferrer">"github.com/saramdni"</a></div>
+          <div class="crow"><span class="ckey">linkedin</span><a class="cval"
+              href="https://www.linkedin.com/in/sara-madani-front-end-developer/" target="_blank"
+              rel="noopener noreferrer">"in/sara-madani"</a></div>
+          <div class="brace">}</div>
+        </div>
       </div>
-    </section>
 
-  </main>
+      <div class="side-block">
+        <h3 class="side-title"><span class="slash">//</span>education</h3>
+        <div class="edu-degree">B.Sc. in Software Engineering</div>
+        <div class="edu-school">Shariaty Technical &amp; Vocational University</div>
+        <div class="edu-date">2018 → 2023</div>
+      </div>
 
-  <footer class="statusbar">
-    <div class="sb-group">
-      <span class="sb-item sb-branch">git:(main*)</span>
-      <span class="sb-item sb-ok">✓ prettier</span>
-      <span class="sb-item">✕ 0 &nbsp;⚠ 0</span>
-    </div>
-    <div class="sb-group">
-      <span class="sb-item">Ln 42, Col 7</span>
-      <span class="sb-item">Spaces: 2</span>
-      <span class="sb-item">UTF-8</span>
-      <span class="sb-item sb-lang">TypeScript TSX</span>
-    </div>
-  </footer>
+      <div class="side-block">
+        <h3 class="side-title"><span class="slash">//</span>achievements.log</h3>
+        <ul class="achv">
+          <li><span class="yr">[2019]</span> <strong>Winner</strong> — Algorithm Contest at Quera.ir</li>
+          <li><span class="yr">[2017]</span> <strong>Winner</strong> — Game Development Contest, built with C# Windows
+            Forms</li>
+        </ul>
+      </div>
 
-</div>
+    </aside>
+
+    <main class="main">
+
+      <section class="section">
+        <h2 class="section-title"><span class="slash">//</span><span class="idx">01</span>professional_summary</h2>
+        <p class="summary">
+          Frontend Developer and UI/UX Specialist with <span class="num">5+</span> years of experience engineering
+          scalable web applications and enterprise systems. Expert in <strong>React.js</strong>,
+          <strong>Next.js</strong>, and <strong>TypeScript</strong>, with a strong focus on architecting custom UI
+          component systems, data-driven dashboards, and integrating enterprise AI capabilities. Proven track record
+          leading projects across the entire product lifecycle — from UX research and prototyping to frontend
+          architecture, API integration, and production maintenance.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title"><span class="slash">//</span><span class="idx">02</span>technical_skills</h2>
+        <div class="skills">
+
+          <div class="skill-row">
+            <div class="skill-key">core_frameworks</div>
+            <div class="tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">JavaScript (ES6+)</span>
+              <span class="tag">React.js</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Vue.js</span>
+              <span class="tag">AngularJS</span>
+              <span class="tag">React Native</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-key">state_and_data</div>
+            <div class="tags">
+              <span class="tag">React Query (TanStack Query)</span>
+              <span class="tag">Redux Toolkit</span>
+              <span class="tag">Context API</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">WebSockets</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-key">ui_ux_styling</div>
+            <div class="tags">
+              <span class="tag">UI/UX Design</span>
+              <span class="tag">Custom Design Systems</span>
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">SASS/SCSS</span>
+              <span class="tag">LESS</span>
+              <span class="tag">Responsive Design</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-key">architecture</div>
+            <div class="tags">
+              <span class="tag">Frontend Architecture</span>
+              <span class="tag">Component-Driven Dev</span>
+              <span class="tag">Performance Tuning</span>
+              <span class="tag">Cross-Browser Compatibility</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title"><span class="slash">//</span><span class="idx">03</span>work_experience</h2>
+        <div class="timeline">
+
+          <article class="commit current">
+            <div class="commit-row1">
+              <span class="job-title">Frontend Developer &amp; UI/UX Specialist</span>
+              <span class="exp-date">Nov 2024 → Present</span>
+            </div>
+            <div class="commit-row2">
+              <span class="company">Fakoor Sanat Tehran</span>
+              <span class="meta">
+                <span class="branch">HEAD → main</span>
+                <span class="hash">a91fe24</span>
+              </span>
+            </div>
+            <ul>
+              <li><strong>Enterprise Dashboard &amp; IT Platform ("Sheng"):</strong> Architected and developed an
+                enterprise-wide platform from scratch using Next.js (App Router), React.js, and TypeScript,
+                consolidating business workflows and organizational automation.</li>
+              <li><strong>Enterprise AI Integration:</strong> Integrated enterprise-grade AI models and intelligent
+                chatbot workflows (such as Porsa) directly into dashboard subsystems for automated business operations.
+              </li>
+              <li><strong>Custom Component Infrastructure:</strong> Engineered a scalable, zero-dependency custom UI
+                design system and reusable component library from the ground up, significantly reducing boilerplate and
+                boosting UI consistency.</li>
+              <li><strong>End-to-End UI/UX:</strong> Led design and user testing for Fakoor Sanat's core web interfaces,
+                maintaining continuous collaboration with backend/DevOps for testing, staging, and production rollouts.
+              </li>
+            </ul>
+          </article>
+
+          <article class="commit">
+            <div class="commit-row1">
+              <span class="job-title">Frontend Developer</span>
+              <span class="exp-date">Jul 2021 → Oct 2024</span>
+            </div>
+            <div class="commit-row2">
+              <span class="company">Fanap Infrastructure</span>
+              <span class="meta"><span class="hash">7c3d9b1</span></span>
+            </div>
+            <ul>
+              <li>Collaborated within a cross-functional team of <span class="num">7</span> to engineer large-scale
+                enterprise web applications using React.js, Next.js, and Vue.js.</li>
+              <li>Implemented over <span class="num">70%</span> of core frontend functionality; restructured Next.js
+                APIs to eliminate redundant middleware layers, reducing build bundle size by <span
+                  class="num">30%</span>.</li>
+              <li>Developed high-performance recursive rendering components capable of efficiently displaying over <span
+                  class="num">50,000</span> hierarchical tree items.</li>
+              <li>Optimized data fetching with React Query and Redux, achieving an estimated <span
+                  class="num">40%</span> performance gain across data-intensive views.</li>
+              <li>Built and delivered performant cross-platform mobile applications using React Native for iOS and
+                Android.</li>
+            </ul>
+          </article>
+
+          <article class="commit">
+            <div class="commit-row1">
+              <span class="job-title">Frontend Developer</span>
+              <span class="exp-date">Jan 2021 → Nov 2021</span>
+            </div>
+            <div class="commit-row2">
+              <span class="company">Fanap Soft</span>
+              <span class="meta"><span class="hash">e58a102</span></span>
+            </div>
+            <ul>
+              <li>Collaborated with an Agile team of <span class="num">15+</span> engineers developing an ERP mobile
+                solution utilizing AngularJS and OnsenUI.</li>
+              <li>Developed complex components from scratch, including custom Persian/Gregorian calendars, barcode
+                scanners, and search modules.</li>
+              <li>Refactored <span class="num">40+</span> legacy components, reducing script complexity by <span
+                  class="num">30%</span> and doubling rendering efficiency.</li>
+            </ul>
+          </article>
+
+          <article class="commit">
+            <div class="commit-row1">
+              <span class="job-title">Frontend Developer</span>
+              <span class="exp-date">Jul 2019 → Jul 2021</span>
+            </div>
+            <div class="commit-row2">
+              <span class="company">Lisiantos</span>
+              <span class="meta"><span class="hash">2b4c8f7</span></span>
+            </div>
+            <ul>
+              <li>Designed and developed over <span class="num">200</span> responsive HTML5/CSS3/JavaScript website
+                templates optimized for all modern viewports.</li>
+              <li>Created intuitive UI/UX design patterns, leading to a <span class="num">40%</span> increase in
+                customer satisfaction.</li>
+            </ul>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="statusbar">
+      <div class="sb-group">
+        <span class="sb-item sb-branch">git:(main*)</span>
+        <span class="sb-item sb-ok">✓ prettier</span>
+        <span class="sb-item">✕ 0 &nbsp;⚠ 0</span>
+      </div>
+      <div class="sb-group">
+        <span class="sb-item">Ln 42, Col 7</span>
+        <span class="sb-item">Spaces: 2</span>
+        <span class="sb-item">UTF-8</span>
+        <span class="sb-item sb-lang">TypeScript TSX</span>
+      </div>
+    </footer>
+
+  </div>
 
 </body>
+
 </html>

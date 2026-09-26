@@ -22,7 +22,7 @@ const SHENG_TABS: TabDef[] = [
     id: 'architecture',
     label: '01. Architecture',
     body:
-      'Unified enterprise IT platform for Fekoor Sanat Tehran — Next.js App Router, TypeScript end-to-end, and a modular domain architecture spanning identity, operations, and realtime workflows.',
+      'Unified enterprise IT platform for Fakoor Sanat Tehran — Next.js App Router, TypeScript end-to-end, and a modular domain architecture spanning identity, operations, and realtime workflows.',
   },
   {
     id: 'design',
@@ -34,7 +34,7 @@ const SHENG_TABS: TabDef[] = [
     id: 'ai',
     label: '03. Enterprise AI',
     body:
-      'Corporate AI platform integration featuring Parsa — a streaming assistant wired into enterprise surfaces for grounded answers, operator tooling, and low-latency token delivery.',
+      'Corporate AI platform integration featuring Porsa — a streaming assistant wired into enterprise surfaces for grounded answers, operator tooling, and low-latency token delivery.',
   },
 ]
 
@@ -46,12 +46,12 @@ const TECH_TAGS = [
 ] as const
 
 const STREAM_SCRIPT = [
-  '> initializing parsa agent runtime…',
+  '> initializing Porsa agent runtime…',
   '> connecting to enterprise context graph',
   '> tools: search_docs · query_ops · summarize',
   '',
-  'Parsa: Routing your request through the Sheng OS knowledge layer.',
-  'Parsa: Synthesizing a grounded response with live telemetry…',
+  'Porsa: Routing your request through the Sheng OS knowledge layer.',
+  'Porsa: Synthesizing a grounded response with live telemetry…',
   '',
   'Latency budget: 40ms / token · stream: open',
   'Done. Ready for the next operator prompt.',
@@ -66,7 +66,7 @@ interface TreeNode {
 const DEMO_TREE: TreeNode[] = [
   {
     id: 'org',
-    label: 'Fekoor Sanat',
+    label: 'Fakoor Sanat',
     children: [
       {
         id: 'platform',
@@ -100,7 +100,7 @@ const DEMO_TREE: TreeNode[] = [
             id: 'ai-layer',
             label: 'AI Layer',
             children: [
-              { id: 'parsa', label: 'Parsa Assistant' },
+              { id: 'Porsa', label: 'Porsa Assistant' },
               { id: 'rag', label: 'RAG Index' },
             ],
           },
@@ -171,7 +171,7 @@ function TreeItem({ node, depth = 0, expanded, onToggle }: TreeItemProps) {
   )
 }
 
-function ParsaTerminal() {
+function PorsaTerminal() {
   const [output, setOutput] = useState('')
   const [streaming, setStreaming] = useState(false)
   const timerRef = useRef<number | null>(null)
@@ -210,7 +210,7 @@ function ParsaTerminal() {
           <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-subtle">
             Interactive Live Lab
           </p>
-          <h3 className="mt-1 text-base font-semibold text-ink">Parsa AI Agent</h3>
+          <h3 className="mt-1 text-base font-semibold text-ink">Porsa AI Agent</h3>
         </div>
         <button
           type="button"
@@ -231,7 +231,7 @@ function ParsaTerminal() {
           <span className="h-2 w-2 rounded-full bg-red-500/70" />
           <span className="h-2 w-2 rounded-full bg-amber-500/70" />
           <span className="h-2 w-2 rounded-full bg-emerald-500/70" />
-          <span className="ml-2 text-[10px] text-ink-faint">parsa@sheng-os — zsh</span>
+          <span className="ml-2 text-[10px] text-ink-faint">Porsa@sheng-os — zsh</span>
         </div>
         <pre className="whitespace-pre-wrap break-words">
           {output || (
@@ -306,7 +306,7 @@ function ShengFlagship() {
             Sheng OS
           </h3>
           <p className="mt-1 text-sm text-ink-muted">
-            Fekoor Sanat Tehran — enterprise IT platform
+            Fakoor Sanat Tehran — enterprise IT platform
           </p>
         </div>
         <ul className="flex flex-wrap gap-1.5">
@@ -442,7 +442,7 @@ export default function BentoShowcase() {
             <ShengFlagship />
           </BentoCell>
           <BentoCell className="md:col-span-4">
-            <ParsaTerminal />
+            <PorsaTerminal />
           </BentoCell>
           <BentoCell className="md:col-span-4">
             <TreeDemo />
